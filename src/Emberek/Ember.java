@@ -1,5 +1,9 @@
 package Emberek;
 
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.Locale;
+
 public class Ember {
     private String nev;
     private String szulDatum;
@@ -25,10 +29,14 @@ public class Ember {
         return Integer.parseInt(szuletesiAdatok[2]);
     }
 
+    public int getEletkor(){
+        return LocalDate.now().getYear() - this.getSzuletesiEv();
+    }
+
 
 
     @Override
     public String toString() {
-        return String.format("%30s, %10s, %-20s ", this.nev, this.szulDatum, this.szulHeLy);
+        return String.format("%30s, %10s, (%3d év) %-20s ", this.nev, this.szulDatum, this.getEletkor(), this.szulHeLy );
     }
 }
