@@ -10,4 +10,9 @@ public class Ember {
         this.szulDatum=szulDatum;
         this.szulHeLy=szulHely;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%30s, %10s, %-20s ", this.nev, this.szulDatum, this.szulHeLy );
+    }
 }
